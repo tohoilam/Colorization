@@ -2,11 +2,9 @@ import os
 import numpy as np
 from PIL import Image
 from matplotlib import pyplot as plt
-import skimage
 from skimage import color
 from skimage.color import rgb2gray
 
-import tensorflow as tf
 from keras.preprocessing.image import ImageDataGenerator
 
 class Data():

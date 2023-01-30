@@ -3,13 +3,11 @@ import cv2
 import shutil
 import numpy as np
 from PIL import Image
-import skimage
 from skimage import color
 from skimage.color import rgb2gray
 
 import tensorflow as tf
 from keras.utils import save_img
-from keras.preprocessing.image import ImageDataGenerator
 from flask import Flask, request, render_template
 from Data import Data
 
@@ -123,4 +121,5 @@ def emptyDirectory(directory):
 			return {'data': [], 'status': 'failed', 'errMsg': errMsg}
 
 if __name__ == "__main__":
-	app.run()
+	port = int(os.environ.get('PORT', 5000))
+	app.run(host='0.0.0.0', port=port)
