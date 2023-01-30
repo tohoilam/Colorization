@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Fruits Image Colorization</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+  <!-- <link rel="stylesheet" href="../static/style.css"> -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+  <script type="text/javascript" src="https://code.jquery.com/jquery.min.js"></script>
+  <script src="{{ url_for('static', filename='script.js') }}"></script>
+</head>
+<body>
+  <div id="loading" loading-active="False">
+    <div id="loader"></div>
+  </div>
+  <div id="container">
+    <header>Fruits Image Colorization</header>
+    <section id="utility-section">
+      <div id="file-upload">
+        <form id="upload-form" action="#" drop-active="False" >
+          <i class="fas fa-cloud-upload-alt"></i>
+          <p>Browse File to Upload</p>
+        </form>
+        <input type="file" id="file-input">
+      </div>
+      <div id="select-image-area">
+        <div class="select-image-box">
+          <img class="select-image" src="{{ url_for('static', filename='grayscale_images/acerolas_1.jpg') }}" alt="acerolas_1" class="select-image">
+        </div>
+        <div class="select-image-box">
+          <img class="select-image" src="{{ url_for('static', filename='grayscale_images/apples_1.jpg') }}" alt="apples_1" class="select-image">
+        </div>
+        <div class="select-image-box">
+          <img class="select-image" src="{{ url_for('static', filename='grayscale_images/apples_2.jpg') }}" alt="apples_2" class="select-image">
+        </div>
+        <div class="select-image-box">
+          <img class="select-image" src="{{ url_for('static', filename='grayscale_images/apples_3.jpg') }}" alt="apples_3" class="select-image">
+        </div>
+        <div class="select-image-box">
+          <img class="select-image" src="{{ url_for('static', filename='grayscale_images/apricots_1.jpg') }}" alt="apricots_1" class="select-image">
+        </div>
+        <div class="select-image-box">
+          <img class="select-image" src="{{ url_for('static', filename='grayscale_images/apricots_2.jpg') }}" alt="apricots_2" class="select-image">
+        </div>
+        <div class="select-image-box">
+          <img class="select-image" src="{{ url_for('static', filename='grayscale_images/avocados_1.jpg') }}" alt="avocados_1" class="select-image">
+        </div>
+        <div class="select-image-box">
+          <img class="select-image" src="{{ url_for('static', filename='grayscale_images/avocados_2.jpg') }}" alt="avocados_2" class="select-image">
+        </div>
+        <div class="select-image-box">
+          <img class="select-image" src="{{ url_for('static', filename='grayscale_images/avocados_3.jpg') }}" alt="avocados_3" class="select-image">
+        </div>
+        <div class="select-image-box">
+          <img class="select-image" src="{{ url_for('static', filename='grayscale_images/bananas_1.jpg') }}" alt="bananas_1" class="select-image">
+        </div>
+        <div class="select-image-box">
+          <img class="select-image" src="{{ url_for('static', filename='grayscale_images/bananas_2.jpg') }}" alt="bananas_2" class="select-image">
+        </div>
+        <div class="select-image-box">
+          <img class="select-image" src="{{ url_for('static', filename='grayscale_images/blackberries_1.jpg') }}" alt="blackberries_1" class="select-image">
+        </div>
+        <div class="select-image-box">
+          <img class="select-image" src="{{ url_for('static', filename='grayscale_images/blackberries_2.jpg') }}" alt="blackberries_2" class="select-image">
+        </div>
+        <div class="select-image-box">
+          <img class="select-image" src="{{ url_for('static', filename='grayscale_images/blackberries_3.jpg') }}" alt="blackberries_3" class="select-image">
+        </div>
+        <div class="select-image-box">
+          <img class="select-image" src="{{ url_for('static', filename='grayscale_images/blueberries_1.jpg') }}" alt="blueberries_1" class="select-image">
+        </div>
+        <div class="select-image-box">
+          <img class="select-image" src="{{ url_for('static', filename='grayscale_images/blueberries_2.jpg') }}" alt="blueberries_2" class="select-image">
+        </div>
+        <div class="select-image-box">
+          <img class="select-image" src="{{ url_for('static', filename='grayscale_images/blueberries_3.jpg') }}" alt="blueberries_3" class="select-image">
+        </div>
+        <div class="select-image-box">
+          <img class="select-image" src="{{ url_for('static', filename='grayscale_images/kiwi_strawberry.jpeg') }}" alt="kiwi_strawberry" class="select-image">
+        </div>
+        <div class="select-image-box">
+          <img class="select-image" src="{{ url_for('static', filename='grayscale_images/kiwifruit_1.jpg') }}" alt="kiwifruit_1" class="select-image">
+        </div>
+        <div class="select-image-box">
+          <img class="select-image" src="{{ url_for('static', filename='grayscale_images/kiwifruit_2.jpg') }}" alt="kiwifruit_2" class="select-image">
+        </div>
+        <div class="select-image-box">
+          <img class="select-image" src="{{ url_for('static', filename='grayscale_images/kiwifruit_3.jpg') }}" alt="kiwifruit_3" class="select-image">
+        </div>
+        <div class="select-image-box">
+          <img class="select-image" src="{{ url_for('static', filename='grayscale_images/lemons_1.jpg') }}" alt="lemons_1" class="select-image">
+        </div>
+        <div class="select-image-box">
+          <img class="select-image" src="{{ url_for('static', filename='grayscale_images/lemons_2.jpg') }}" alt="lemons_2" class="select-image">
+        </div>
+        <div class="select-image-box">
+          <img class="select-image" src="{{ url_for('static', filename='grayscale_images/lemons_3.jpg') }}" alt="lemons_3" class="select-image">
+        </div>
+        <div class="select-image-box">
+          <img class="select-image" src="{{ url_for('static', filename='grayscale_images/lemons_4.jpg') }}" alt="lemons_4" class="select-image">
+        </div>
+        <div class="select-image-box">
+          <img class="select-image" src="{{ url_for('static', filename='grayscale_images/oranges_1.jpg') }}" alt="oranges_1" class="select-image">
+        </div>
+        <div class="select-image-box">
+          <img class="select-image" src="{{ url_for('static', filename='grayscale_images/oranges_2.jpg') }}" alt="oranges_2" class="select-image">
+        </div>
+        <div class="select-image-box">
+          <img class="select-image" src="{{ url_for('static', filename='grayscale_images/oranges_3.jpg') }}" alt="oranges_3" class="select-image">
+        </div>
+        <div class="select-image-box">
+          <img class="select-image" src="{{ url_for('static', filename='grayscale_images/passionfruit_1.jpg') }}" alt="passionfruit_1" class="select-image">
+        </div>
+        <div class="select-image-box">
+          <img class="select-image" src="{{ url_for('static', filename='grayscale_images/passionfruit_2.jpg') }}" alt="passionfruit_2" class="select-image">
+        </div>
+        <div class="select-image-box">
+          <img class="select-image" src="{{ url_for('static', filename='grayscale_images/peaches_1.jpg') }}" alt="peaches_1" class="select-image">
+        </div>
+        <div class="select-image-box">
+          <img class="select-image" src="{{ url_for('static', filename='grayscale_images/peaches_2.jpg') }}" alt="peaches_2" class="select-image">
+        </div>
+        <div class="select-image-box">
+          <img class="select-image" src="{{ url_for('static', filename='grayscale_images/peaches_3.jpg') }}" alt="peaches_3" class="select-image">
+        </div>
+        <div class="select-image-box">
+          <img class="select-image" src="{{ url_for('static', filename='grayscale_images/pineapples_1.jpg') }}" alt="pineapples_1" class="select-image">
+        </div>
+        <div class="select-image-box">
+          <img class="select-image" src="{{ url_for('static', filename='grayscale_images/pineapples_2.jpg') }}" alt="pineapples_2" class="select-image">
+        </div>
+        <div class="select-image-box">
+          <img class="select-image" src="{{ url_for('static', filename='grayscale_images/pineapples_3.jpg') }}" alt="pineapples_3" class="select-image">
+        </div>
+        <div class="select-image-box">
+          <img class="select-image" src="{{ url_for('static', filename='grayscale_images/strawberries_1.jpg') }}" alt="strawberries_1" class="select-image">
+        </div>
+        <div class="select-image-box">
+          <img class="select-image" src="{{ url_for('static', filename='grayscale_images/strawberries_2.jpg') }}" alt="strawberries_2" class="select-image">
+        </div>
+        <div class="select-image-box">
+          <img class="select-image" src="{{ url_for('static', filename='grayscale_images/strawberries_3.jpg') }}" alt="strawberries_3" class="select-image">
+        </div>
+        <div class="select-image-box">
+          <img class="select-image" src="{{ url_for('static', filename='grayscale_images/watermelons_1.jpg') }}" alt="watermelons_1" class="select-image">
+        </div>
+        <div class="select-image-box">
+          <img class="select-image" src="{{ url_for('static', filename='grayscale_images/watermelons_2.jpg') }}" alt="watermelons_2" class="select-image">
+        </div>
+        <div class="select-image-box">
+          <img class="select-image" src="{{ url_for('static', filename='grayscale_images/watermelons_3.jpg') }}" alt="watermelons_3" class="select-image">
+        </div>
+      </div>
+      <div id="uploaded-box">
+        <img id="selected-image" src="data:image/gif;base64,R0lGODlhAQABAAD/ACwAAAAAAQABAAACADs=" alt="selected-image">
+      </div>
+      <button id="predict-button">Predict</button>
+    </section>
+    <section id="grayscale-section">
+      <h1 id="grayscale-title">Grayscale</h1>
+      <div id="grayscale-box" class="image-box">
+        <img id="grayscale-image" src="data:image/gif;base64,R0lGODlhAQABAAD/ACwAAAAAAQABAAACADs=" alt="grayscale-image">
+      </div>
+    </section>
+    <section id="colorized-section">
+      <h1 id="colorized-title">Colorized</h1>
+      <div id="colorized-box" class="image-box">
+        <img id="colorized-image" src="data:image/gif;base64,R0lGODlhAQABAAD/ACwAAAAAAQABAAACADs=" alt="colorized-image">
+      </div>
+    </section>
+  </div>
+  <div id='hostUrl'>{{ hostUrl }}</div>
+</body>
+</html>

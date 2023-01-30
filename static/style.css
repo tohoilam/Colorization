@@ -1,0 +1,248 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap');
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+body {
+  height: 100vh;
+  width: 100%;
+  margin: 0;
+  background-color: rgb(250, 225, 193);
+  background-image: linear-gradient(135deg, rgb(250, 225, 193) 0%, rgb(247, 239, 235) 100%);
+  position: relative
+}
+
+#hostUrl {
+  display: none;
+}
+
+#container {
+  position: relative;
+  display: grid;
+  grid-template-columns: 50% 50%;
+  grid-template-rows: 13% 17% 60% 10%;
+  height: 100%;
+  width: 100%;
+  margin: 0;
+  z-index: 1;
+}
+
+#utility-section {
+  grid-column: 1 / span 2;
+  grid-row: 2 / span 1;
+  display: flex;
+  justify-content: space-evenly;
+  padding: 10px 40px 10px 40px;
+  column-gap: 10px;
+  align-items: center;
+}
+
+#grayscale-section {
+  grid-column: 1 / span 1;
+  grid-row: 3 / span 1;
+  padding: 20px 30px 0px 40px;
+}
+
+#colorized-section {
+  grid-column: 2 / span 1;
+  grid-row: 3 / span 1;
+  padding: 20px 40px 0px 30px;
+}
+
+#loading {
+  position: fixed;
+  height: 100vh;
+  width: 100vw;
+  z-index: 10000;
+  background-color: rgba(0, 0, 0, 0.571);
+}
+
+#loader {
+  border: 5px solid rgb(250, 225, 193); /* Light grey */
+  border-top: 5px solid rgb(225, 94, 93); /* Blue */
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  margin: auto;
+  margin-top: 45vh;
+  animation: spin 0.7s linear infinite;
+}
+
+#loading[loading-active="False"] {
+  left: -100%;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+header {
+  text-align: center;
+  padding-top: 20px;
+  grid-column: 1 / span 2;
+  grid-row: 1 / span 1;
+  font-size: 2.5rem;
+  color: rgb(250, 245, 243);
+  font-weight: 600;
+  background-color: rgb(225, 94, 93);
+  background-image: linear-gradient(135deg, rgb(225, 94, 93) 0%, rgb(231, 152, 110) 100%);
+}
+
+/* ***************** */
+/* Select Image Area */
+/* ***************** */
+#select-image-area {
+  height: 100%;
+  width: 800px;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  overflow-x: auto;
+  border: 2px solid rgb(9, 114, 104);
+  border-radius: 5px;
+  justify-content: space-around;
+  align-content: flex-start;
+  column-gap: 5px;
+}
+
+.select-image-box {
+  overflow: hidden;
+  height: 48%;
+  width: 60px;
+  padding: 3px;
+}
+
+.select-image {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+  cursor: pointer;
+}
+
+.select-image:hover {
+  filter: saturate(120%) brightness(120%) drop-shadow(2px 2px 2px rgb(9, 114, 104));
+}
+
+.select-image:active {
+  filter: saturate(130%) brightness(130%) drop-shadow(2px 2px 3px rgb(3, 71, 64));
+}
+
+/* ************ */
+/* Uploaded Box */
+/* ************ */
+#uploaded-box {
+  height: 100%;
+  width: 200px;
+  border: 2px solid rgb(9, 114, 104);
+  border-radius: 5px;
+  padding: 5px;
+}
+
+#selected-image {
+  height: 100%;
+  width: 100%;
+  object-fit: contain;
+  padding: 5px;
+}
+
+/* *********** */
+/* File Upload */
+/* *********** */
+#file-upload {
+  width: 200px;
+  height: 100%;
+  /* background: #6fe1f5; */
+  border-radius: 5px;
+}
+
+#file-upload #upload-form {
+  height: 100%;
+  display: flex;
+  cursor: pointer;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  border-radius: 5px;
+  border: 2px dashed rgb(9, 114, 104);
+}
+
+#file-upload #upload-form i {
+  font-size: 30px;
+  color: rgb(9, 114, 104);
+}
+
+#file-upload #upload-form p {
+  font-size: 16px;
+  margin-top: 5px;
+  color: rgb(9, 114, 104);
+}
+
+#file-upload #upload-form[drop-active=True] {
+  border: 2px dashed rgb(1, 94, 85);
+}
+
+#file-upload #upload-form[drop-active=True] i {
+  color: rgb(1, 94, 85);
+}
+
+#file-upload #upload-form[drop-active=True] p {
+  color: rgb(1, 94, 85);
+}
+
+#file-input {
+  position: absolute;
+  left: -100%;
+}
+
+/* ************** */
+/* Predict Button */
+/* ************** */
+#predict-button {
+  height: 30px;
+  padding: 0px 10px 0px 10px;
+  font-weight: bold;
+  font-size: 1.2rem;
+  border: 0px;
+  background-color: rgb(225, 94, 93);
+  color: rgb(250, 245, 243);
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+#predict-button:hover {
+  background-color: rgb(241, 86, 86);
+}
+
+#predict-button:active {
+  background-color: rgb(251, 48, 48);
+}
+
+/* *********** */
+/* Image Boxed */
+/* *********** */
+h1 {
+  height: 10%;
+  font-size: 1.6rem;
+  text-align: center;
+  color: rgb(9, 114, 104);
+}
+
+.image-box {
+  height: 90%;
+  width: 100%;
+  border: 3px solid rgb(9, 114, 104);
+  /* background-color: white; */
+  border-radius: 20px;
+  padding: 10px;
+  overflow: hidden;
+}
+
+.image-box > img {
+  height: 100%;
+  width: 100%;
+  object-fit: contain;
+}
