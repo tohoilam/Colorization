@@ -28,7 +28,10 @@ def too_large(e):
 
 @app.route('/')
 def index():
-	return render_template('index.html', hostUrl=request.host_url)
+	url = request.host_url
+	if url[4] != 's':
+		url = url[:4] + 's' + url[4:]
+	return render_template('index.html', hostUrl=url)
 
 @app.route('/colorize', methods=['POST'])
 def colorize():
