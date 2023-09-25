@@ -1,0 +1,5 @@
+As we include our executed instance in the Jupyter Notebook, and we realized that it is extremely slow to open the Jupyter Notebook, the following 3 links are the Google Colab links with content identical to the 3 Jupyter Notebook in this Final Work Package.
+
+Colorization Model and Evaluation: https://colab.research.google.com/drive/1yTzQpJ5miL5hueHNiqvhTZXwID8opb6B?usp=sharing
+Colorization Model and Loss Function Evaluation: https://colab.research.google.com/drive/1IOrSAUuJYKlX-qjDDrdRWlA34fAxEI0D?usp=sharing
+Colorization Model and Training: https://colab.research.google.com/drive/1J5-1H-eJbowGD508zcpjLBqjXQ8XmfOw?usp=sharing
