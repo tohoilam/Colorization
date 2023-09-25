@@ -2,7 +2,7 @@
 
 An automatic colorization of grayscale fruit images of 30 types of different fruits, with Convolutional Neural Network (CNN) model.
 
-Click [here](##colorizable-fruits-list) for the list of colorizable fruits list.
+Click [here](#colorizable-fruits-list) for the list of colorizable fruits list.
 
 ## Problem Statement and Approach
 
