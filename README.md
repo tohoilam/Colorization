@@ -2,7 +2,7 @@
 
 An automatic colorization of grayscale fruit images of 30 types of different fruits, with Convolutional Neural Network (CNN) model.
 
-Click [here](#colorizable-fruits-list) for the list of colorizable fruits list.
+Click [here](#fruits-list-anchor) for the list of colorizable fruits list.
 
 ## Problem Statement and Approach
 
@@ -123,6 +123,7 @@ A web application is built with JavaScript, HTML/CSS, and Flask for demo, and is
 
 User can either upload any grayscale fruit image (under a [list of acceptable fruits](##Colorizable-Fruits-List)) or choose from a given list of fruit image examples.
 
+<a id="fruits-list-anchor"></a>
 
 ## Colorizable Fruits List
 
