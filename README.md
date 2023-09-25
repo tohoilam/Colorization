@@ -121,7 +121,7 @@ A web application is built with JavaScript, HTML/CSS, and Flask for demo, and is
 
 <img width="800" alt="CleanShot 2023-09-25 at 02 14 35@2x" src="https://github.com/tohoilam/Colorization/assets/61353084/a5a51bf5-1fce-4ff2-9e43-6ca12be95796">
 
-User can either upload any grayscale fruit image (under a [list of acceptable fruits](##Colorizable-Fruits-List)) or choose from a given list of fruit image examples.
+User can either upload any grayscale fruit image (under a [list of acceptable fruits](#fruits-list-anchor)) or choose from a given list of fruit image examples.
 
 <a id="fruits-list-anchor"></a>
 
